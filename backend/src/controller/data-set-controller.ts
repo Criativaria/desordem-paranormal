@@ -1,5 +1,10 @@
-import type { Request, Response } from "express";
+import type { FastifyRequest, FastifyReply as FastifyResponse } from "fastify";
 
-export async function DataSetController(req: Request, res: Response) {
-  return res.json("uai sô");
+
+class DataSetController {
+  public async list(req: FastifyRequest, res: FastifyResponse){
+    return res.status(200).send("uai sô");
+  }
 }
+export const dataSetController = new DataSetController()
+
