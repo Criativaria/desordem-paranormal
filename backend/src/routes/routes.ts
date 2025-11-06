@@ -1,6 +1,15 @@
-import { Router, type Response } from "express";
-import { DataSetController } from "../controller/data-set-controller.js";
+import type { FastifyInstance } from "fastify";
+import type { ZodTypeProvider } from "fastify-type-provider-zod";
+import { dataSetController } from "../controller/data-set-controller.js";
 
-export const appRoutes = Router();
 
-appRoutes.all("/", (req, res) => DataSetController(req, res));
+export async function appRoutes(api: FastifyInstance) {
+	api.withTypeProvider<ZodTypeProvider>().get("/", {
+		schema: {
+			tags: ["Wiki"],
+			summary: "list wiki",
+			description: "list wiki",
+		},
+		handler: dataSetController.list,
+	});
+}
