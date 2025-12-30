@@ -166,3 +166,4 @@ dist-ssr
 *.sw?
 
 local.db
+.vercel

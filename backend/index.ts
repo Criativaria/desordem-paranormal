@@ -3,6 +3,7 @@ import "dotenv/config";
 import { appRoutes } from "./src/routes/routes.js";
 import "./src/utils/cron-job.js";
 import { SemanticSearchService } from "./src/services/semantic-search-service.js";
+import { WikiOp } from "./src/api/wiki-op.js";
 
 async function main() {
   const app = express();
