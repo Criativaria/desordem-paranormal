@@ -5,4 +5,3 @@ export const appRoutes = Router();
 
 appRoutes.get("/pages", WikiController.GetPages);
 appRoutes.get("/connections", WikiController.GetConnections);
-appRoutes.post("/search", WikiController.SearchWiki);

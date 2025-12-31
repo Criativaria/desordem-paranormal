@@ -1,7 +1,6 @@
 import { Page as wikiPage } from "wikijs";
 import { WikiDataManipulationService } from "./wiki-data-manipulation-service";
 import { WikiRepository } from "../repository/wiki-repository";
-import { SemanticSearchService } from "./semantic-search-service";
 import { WikiOp } from "../api/wiki-op";
 import { normalizeText } from "../utils/formatter";
 
@@ -11,7 +10,6 @@ export interface Page {
   link: string;
   html: string;
   categories: string[];
-  embedding: number[];
   connections?: number[];
 }
 
@@ -42,9 +40,6 @@ export class WikiService {
 
       const filteredPages = formatedPages.filter((page) => !!page);
 
-      console.log("update page %i embeddings", filteredPages.length);
-
-      await this.UpdatePagesEmbeddings(filteredPages);
       await WikiRepository.UpdatePage(filteredPages);
       allPagesObjects.push(...filteredPages);
     }
@@ -54,21 +49,17 @@ export class WikiService {
 
   private static async FormatPage(page: wikiPage) {
     try {
-      const [wikiText, categories] = await Promise.all([
-        await WikiOp.getWikiText(page.raw.title),
-        await page.categories(),
+      const [html, categories] = await Promise.all([
+        page.html(),
+        page.categories(),
       ]);
-
-      if (!wikiText) return;
-      const cleanWikiText = normalizeText(wikiText);
 
       const pageObj: Page = {
         id: page.raw.pageid,
         name: page.raw.title,
         link: page.raw.fullurl,
-        embedding: [],
         categories,
-        html: cleanWikiText,
+        html,
       };
 
       return pageObj;
@@ -77,21 +68,11 @@ export class WikiService {
     }
   }
 
-  private static async UpdatePagesEmbeddings(pages: Page[]) {
-    for (const page of pages) {
-      page.embedding = await SemanticSearchService.getEmbedding(
-        page.html,
-        "passage"
-      );
-    }
-  }
-
   public static async UpdatePageConnections() {
     const allPages = await this.GetPages();
 
+    console.log("processing connections", allPages.length);
     for (const page of allPages) {
-      console.log("processing connections", allPages.length);
-
       const getPageConnections = await WikiDataManipulationService.GetPageLinks(
         page.html
       );
@@ -113,6 +94,7 @@ export class WikiService {
       }
       await WikiRepository.UpdateConnection(connections);
     }
+    console.log("processei tudo, beijos");
   }
 
   public static async getWikiPages() {

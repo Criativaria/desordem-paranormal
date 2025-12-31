@@ -7,28 +7,25 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "dev": "tsx watch index.ts",
     "update": "npx drizzle-kit push",
     "start": "node dist/index.js",
     "build": "npx tsup --format esm index.ts"
   },
   "dependencies": {
-    "@huggingface/transformers": "^3.8.1",
     "axios": "^1.13.2",
     "cheerio": "^1.1.2",
     "cron": "^4.4.0",
-    "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",
     "express": "^5.1.0",
     "pg": "^8.16.3",
-    "postgres": "^3.4.7",
-    "ts-node": "^10.9.2",
-    "tsup": "^8.5.1"
+    "postgres": "^3.4.7"
   },
   "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.1",
+    "dotenv": "^17.2.3",
     "@types/express": "^5.0.3",
-    "@types/jest": "^30.0.0",
     "@types/node": "^24.6.2",
     "@types/pg": "^8.15.6",
     "drizzle-kit": "^0.31.6",

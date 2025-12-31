@@ -1,22 +1,14 @@
 import axios from "axios";
+import wiki from "wikijs";
 
 export class WikiOp {
   public static async GetPageNames() {
     try {
-      const response = await axios.get(
-        `https://ordemparanormal.fandom.com/api.php`,
-        {
-          params: {
-            action: "query",
-            format: "json",
-            list: "allpages",
-            formatversion: "2",
-            aplimit: "max",
-          },
-        }
-      );
+      const pageNames = await wiki({
+        apiUrl: "https://ordemparanormal.fandom.com/api.php",
+      }).allPages();
 
-      console.log(response.data.query.allpages);
+      return pageNames;
     } catch (error) {
       console.log(error, " na GetPageNames");
     }
@@ -24,21 +16,11 @@ export class WikiOp {
 
   public static async getPage(pageName: string) {
     try {
-      const response = await axios.get(
-        `https://ordemparanormal.fandom.com/api.php`,
-        {
-          params: {
-            action: "query",
-            prop: "revisions",
-            titles: pageName,
-            rvslots: "*",
-            rvprop: "content",
-            format: "json",
-          },
-        }
-      );
+      const page = await wiki({
+        apiUrl: "https://ordemparanormal.fandom.com/api.php",
+      }).page(pageName);
 
-      return response.data.query.pages;
+      return page;
     } catch (error) {
       console.log(error, " na GetPage");
     }

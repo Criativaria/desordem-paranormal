@@ -22,19 +22,6 @@ export class WikiRepository {
     return connections;
   }
 
-  public static async ListPagebySimilarity(embedding: number[]) {
-    const similarity = sql<number>`1 - (${cosineDistance(
-      page.embedding,
-      embedding
-    )})`;
-
-    return await db
-      .select({ name: page.name, similarity })
-      .from(page)
-      .orderBy((t) => desc(t.similarity))
-      .limit(5);
-  }
-
   public static async UpdatePage(Pages: Page[]) {
     await db
       .insert(page)
@@ -45,7 +32,6 @@ export class WikiRepository {
           name: sql`excluded.name`,
           link: sql`excluded.link`,
           categories: sql`excluded.categories`,
-          embedding: sql`excluded.embedding`,
         },
       });
   }
