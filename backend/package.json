@@ -20,12 +20,14 @@
     "express": "^5.1.0",
     "pg": "^8.16.3",
     "postgres": "^3.4.7",
+    "string-similarity": "^4.0.4",
     "wikijs": "^6.4.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.6.2",
     "@types/pg": "^8.15.6",
+    "@types/string-similarity": "^4.0.2",
     "dotenv": "^17.2.3",
     "drizzle-kit": "^0.31.6",
     "ts-node": "^10.9.2",

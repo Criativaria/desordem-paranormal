@@ -1,7 +1,7 @@
-import { Router, type Response } from "express";
+import { Router } from "express";
 import { WikiController } from "../controller/get-wiki-controller.js";
 
 export const appRoutes = Router();
 
-appRoutes.get("/pages", WikiController.GetPages);
+appRoutes.get("/pages", (req, res) => WikiController.getPages(req, res));
 appRoutes.get("/connections", WikiController.GetConnections);

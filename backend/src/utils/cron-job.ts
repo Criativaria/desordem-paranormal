@@ -4,7 +4,7 @@ import { WikiService } from "../services/wiki-service";
 new CronJob(
   "0 0 * * *",
   function () {
-    WikiService.UpdatePageConnections();
+    WikiService.updatePageConnections();
   },
   null,
   true,

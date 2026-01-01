@@ -2,7 +2,7 @@ import axios from "axios";
 import wiki from "wikijs";
 
 export class WikiOp {
-  public static async GetPageNames() {
+  public static async getPageNames() {
     try {
       const pageNames = await wiki({
         apiUrl: "https://ordemparanormal.fandom.com/api.php",
