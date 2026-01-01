@@ -1,8 +1,6 @@
 import express from "express";
-import "dotenv/config";
 import { appRoutes } from "./src/routes/routes.js";
 import "./src/utils/cron-job.js";
-import { WikiOp } from "./src/api/wiki-op.js";
 
 async function main() {
   const app = express();

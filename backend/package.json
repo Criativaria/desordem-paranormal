@@ -7,10 +7,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch index.ts",
+    "dev": "tsx watch -r dotenv/config index.ts",
     "update": "npx drizzle-kit push",
-    "start": "node dist/index.js",
-    "build": "npx tsup --format esm index.ts"
+    "start": "node -r dotenv/config dist/index.js",
+    "build": "npx tsup-node"
   },
   "dependencies": {
     "axios": "^1.13.2",
