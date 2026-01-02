@@ -70,6 +70,7 @@ export class WikiService {
     const allPages = await this.getPages();
 
     console.log("processing connections", allPages.length);
+
     for (const page of allPages) {
       const getPageConnections = await WikiDataManipulationService.getPageLinks(
         page.html
@@ -92,7 +93,7 @@ export class WikiService {
       }
       await WikiRepository.updateConnection(connections);
     }
-    console.log("processei tudo, beijos");
+    console.log("processei tudo");
   }
 
   public static async getWikiPages() {
@@ -107,7 +108,6 @@ export class WikiService {
 
   public static async getFilteredPages(search: string) {
     const pages = await WikiRepository.getFilteredPages(search);
-    console.log(pages, "da service");
     return pages;
   }
 }

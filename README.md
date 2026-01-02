@@ -4,24 +4,25 @@ Projeto feito para estudo, com o objetivo de visualizar como a história de [Ord
 
 ## Funcionalidades
 
-- [Grafo](https://www.google.com/search?q=grafo&sca_esv=8c6b6505ed11823e&sxsrf=AE3TifN36-Z_oc0eycuPFnvk4iWCmtuRFQ%3A1766004876607&ei=jBhDaezjJOHE1sQPuZzLkQM&ved=0ahUKEwjs2d3qwMWRAxVhopUCHTnOMjIQ4dUDCBE&uact=5&oq=grafo&gs_lp=Egxnd3Mtd2l6LXNlcnAiBWdyYWZvMggQABiABBixAzIIEAAYgAQYsQMyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyChAAGIAEGEMYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESNUPUABYjwtwAXgBkAEAmAGqAaABqgWqAQMwLjW4AQPIAQD4AQGYAgagAsUFqAIUwgIHECMYJxjqAsICChAjGPAFGCcY6gLCAhYQABiABBhDGLQCGOcGGIoFGOoC2AEBwgIKECMYgAQYJxiKBcICChAuGIAEGCcYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAAGIAEGLEDGIMBwgIKEC4YgAQYQxiKBcICDhAAGIAEGLEDGIMBGIoFwgILEC4YgAQYsQMYgwHCAggQLhiABBixA8ICCxAAGIAEGJIDGIoFwgIFEC4YgATCAg0QABiABBixAxhDGIoFwgIIEAAYgAQYyQOYAwfxBdDGZhV-BCuSugYGCAEQARgBkgcDMS41oAfiR7IHAzAuNbgHvgXCBwUwLjIuNMgHFoAIAA&sclient=gws-wiz-serp) interativo que representa a conexão entre páginas;
-- [Pesquisa semântica](https://www.google.com/search?q=pesquisa+semantica&oq=Pesquisa+seman&gs_lcrp=EgRlZGdlKgoIABAAGIAEGPkHMgoIABAAGIAEGPkHMgcIARAAGIAEMgYIAhBFGDkyBwgDEAAYgAQyCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMgYICBBFGDzSAQg2NDQxajBqMagCALACAQ&sourceid=chrome&ie=UTF-8);
+- [Grafo](https://www.google.com/search?q=grafo&sca_esv=8c6b6505ed11823e&sxsrf=AE3TifN36-Z_oc0eycuPFnvk4iWCmtuRFQ%3A1766004876607&ei=jBhDaezjJOHE1sQPuZzLkQM&ved=0ahUKEwjs2d3qwMWRAxVhopUCHTnOMjIQ4dUDCBE&uact=5&oq=grafo&gs_lp=Egxnd3Mtd2l6LXNlcnAiBWdyYWZvMggQABiABBixAzIIEAAYgAQYsQMyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyChAAGIAEGEMYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESNUPUABYjwtwAXgBkAEAmAGqAaABqgWqAQMwLjW4AQPIAQD4AQGYAgagAsUFqAIUwgIHECMYJxjqAsICChAjGPAFGCcY6gLCAhYQABiABBhDGLQCGOcGGIoFGOoC2AEBwgIKECMYgAQYJxiKBcICChAuGIAEGCcYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAAGIAEGLEDGIMBwgIKEC4YgAQYQxiKBcICDhAAGIAEGLEDGIMBGIoFwgILEC4YgAQYsQMYgwHCAggQLhiABBixA8ICCxAAGIAEGJIDGIoFwgIFEC4YgATCAg0QABiABBixAxhDGIoFwgIIEAAYgAQYyQOYAwfxBdDGZhV-BCuSugYGCAEQARgBkgcDMS41oAfiR7IHAzAuNbgHvgXCBwUwLjIuNMgHFoAIAA&sclient=gws-wiz-serp) interativo que representa a conexão entre as páginas da wiki;
+- [Pesquisa por algoritimo deterministico](https://www.google.com/search?q=pesquisa+semantica&oq=Pesquisa+seman&gs_lcrp=EgRlZGdlKgoIABAAGIAEGPkHMgoIABAAGIAEGPkHMgcIARAAGIAEMgYIAhBFGDkyBwgDEAAYgAQyCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMgYICBBFGDzSAQg2NDQxajBqMagCALACAQ&sourceid=chrome&ie=UTF-8);
 - Filtragem de páginas por categoria;
 
 ## Tecnologias Utilizadas
 
 ### Backend
 
-| Tecnologia                             | Categoria                       |
-| -------------------------------------- | ------------------------------- |
-| Typescript                             | Linguagem Principal             |
-| Express                                | Framework Backend               |
-| Drizzle                                | ORM                             |
-| Node.js                                | Ambiente de execução javascript |
-| Postgress / Supabase                   | Banco de dados                  |
-| Axios                                  | Requisições HTTP                |
-| Cherrio                                | Tratamento de dados             |
-| [Wikijs](https://dijs.github.io/wiki/) | Buscar dados da Wiki do projeto |
+| Tecnologia                                                         | Categoria                              |
+| ------------------------------------------------------------------ | -------------------------------------- |
+| Typescript                                                         | Linguagem Principal                    |
+| Express                                                            | Framework Backend                      |
+| Drizzle                                                            | ORM                                    |
+| Node.js                                                            | Ambiente de execução javascript        |
+| Postgress / Supabase                                               | Banco de dados                         |
+| Axios                                                              | Requisições HTTP                       |
+| Cherrio                                                            | Tratamento de dados                    |
+| [Wikijs](https://dijs.github.io/wiki/)                             | Buscar dados da Wiki do projeto        |
+| [String Similarity](https://github.com/aceakash/string-similarity) | faz a busca por similaridade de string |
 
 ### Frontend
 
@@ -40,43 +41,92 @@ Projeto feito para estudo, com o objetivo de visualizar como a história de [Ord
 
 #### Rotas
 
-caminho: backend\src\routes\routes.ts
+```
+backend\src\routes\routes.ts
+```
 
-| Metodo | Endpoint | Descrição                                                              |
-| ------ | -------- | ---------------------------------------------------------------------- |
-| Get    | /        | Retorna todas as Páginas e todas as Conexões                           |
-| Post   | /search  | Retorna as páginas mais relevantes de acordo com a pesquisa do usuário |
+| Método | Endpoint          | Descrição                                                                        |
+| ------ | ----------------- | -------------------------------------------------------------------------------- |
+| Get    | /pages?           | Retorna todas as Páginas                                                         |
+| Get    | /pages?name="pag" | Retorna somente a/as página(s) mais parecida(s) com o que foi colocado no "name" |
+| Post   | /connections      | Retorna as conexões                                                              |
 
 #### Controller
 
-caminho: backend\src\controller\get-wiki-controller.ts
+```
+backend\src\controller\get-wiki-controller.ts
+```
 
-| Função     | Descrição                                                                                             |
-| ---------- | ----------------------------------------------------------------------------------------------------- |
-| GetWiki    | Faz a requisição na wiki service e retorna as páginas e as conexões                                   |
-| SearchWiki | Busca a pesquisa do usuário e envia para a sematic search service que retorna o resultado da pesquisa |
+| Função         | objetivo                                                               |
+| -------------- | ---------------------------------------------------------------------- |
+| getPages       | envia para a service a pesquisa dessa rota ou retorna todas as páginas |
+| getConnections | busca as conexões da service e retorna elas para a rota                |
 
 #### Wiki Service
 
-caminho: backend\src\services\wiki-service.ts
+```
+backend\src\services\wiki-service.ts
+```
 
-##### Função GetPages
+##### getPages
 
-- Busca as paginas em Records vindas da função [GetPages](#função-getpages-1) da [wikiDataManipulationService](#wikidatamanipulationservice);
-- separa o processamento de 20 em 20 páginas enviando para o FormatPage;
-- envia as páginas já formatadas para: UpdatePagesEmbeddings, para o UpdatePage do repositório e para um array chamado allPagesObjects;
-- retorna o array do allPagesObjects;
+- busca as páginas
+- manda para o [FormatPages](#formatpage)
+- guarda essas páginas em um array
+- coloca essas páginas no banco
+- retorna o array de páginas formatadas
+- retorna no console o progresso do processamento das páginas
 
-##### Função FormatPages
+##### formatPage
 
-- recebe uma página
-- busca na getWikiText o texto da página específica, e as categorias daquela página
-- limpa o texto da página retirando alguns espaços / caracteres
+- formata as páginas na interface Page
+
+##### updatePageConnections
+
+- busca as conexões de cada uma das páginas
+- evita a duplicidade de conexões
+- retorna no console o progresso do processamento de conexões
+
+##### getWikiPages
+
+- recebe o pedido da rota
+- busca as páginas no repositório
+- retorna para a rota
+
+##### getWikiConnections
+
+- recebe o pedido da rota
+- busca as conexões no repositório
+- retorna para a rota
+
+##### getFilteredPages
+
+- recebe o pedido da rota
+- busca a/as página(s) mais parecidas com a pesquisa que veio na rota
+- retorna para a rota
 
 #### WikiDataManipulationService
 
-caminho: backend\src\services\wiki-data-manipulation-service.ts
+```
+backend\src\services\wiki-data-manipulation-service.ts
+```
 
-##### Função GetPages
+##### getPages
 
-Busca da API
+- busca o nome de todas páginas na [API](#wikiop);
+- remove os nomes repetidos ou nomes diferentes que referenciam a mesma página
+- retorna um array de chave e valor com o nome e link de cada página.
+
+##### getPageLinks
+
+- busca todos os links do html de uma pag
+- transforma em elemento de chave e valor com o nome e o link para remover possíveis conexões duplicadas
+- retorna um array com as conexões de chave e valor de cada pag
+
+#### WikiOP
+
+| função      | objetivo                                                                |
+| ----------- | ----------------------------------------------------------------------- |
+| pageNames   | retorna o nome de todas as pags da wiki                                 |
+| getPage     | retorna as informações de uma pag específica                            |
+| getWikiText | busca o conteúdo puro de uma pag, em wikitext que é um tipo de markdown |

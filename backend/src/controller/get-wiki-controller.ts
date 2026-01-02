@@ -16,7 +16,7 @@ export class WikiController {
 
     return res.json(pages);
   }
-  public static async GetConnections(req: Request, res: Response) {
+  public static async getConnections(req: Request, res: Response) {
     const connections = await WikiService.getWikiConnections();
     res.json(connections);
   }
