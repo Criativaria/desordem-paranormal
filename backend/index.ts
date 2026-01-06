@@ -12,6 +12,7 @@ async function main() {
     methods: "GET",
     preflightContinue: false,
     optionSuccessStatus: 204,
+    credentials: true,
   };
 
   app.use(express.json());
