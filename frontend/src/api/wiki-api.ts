@@ -3,7 +3,7 @@ import axios from "axios";
 export class WikiAPI {
   public static async WikiInstance() {
     return axios.create({
-      baseURL: "https://desordem-paranormal.onrender.com",
+      baseURL: "http://localhost:9000/",
       timeout: 180000,
     });
   }
