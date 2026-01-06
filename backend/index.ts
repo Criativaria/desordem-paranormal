@@ -8,7 +8,7 @@ async function main() {
   const cors = require("cors");
 
   const corsOptions = {
-    origin: "*",
+    origin: "http://localhost:5173/",
     methods: "GET",
     preflightContinue: false,
     optionSuccessStatus: 204,
