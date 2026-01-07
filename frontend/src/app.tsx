@@ -2,7 +2,7 @@ import { WikiAPI } from "./api/wiki-api";
 import { useGraph } from "./graph";
 
 export function App() {
-  WikiAPI.getConnections();
+  WikiAPI.getAllPages();
 
   const svgRef = useGraph();
 

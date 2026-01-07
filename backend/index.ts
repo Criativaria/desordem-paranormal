@@ -7,7 +7,11 @@ async function main() {
   const app = express();
   const port = process.env.ENV_PORT;
 
-  app.use(cors());
+  app.use(
+    cors({
+      origin: "*",
+    })
+  );
 
   app.use(express.json());
 

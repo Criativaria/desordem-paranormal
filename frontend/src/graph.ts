@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import { dataset, type Link, type Node } from "./dataset";
+import { database, type Link, type Node } from "./nodes-treatment";
 import { useEffect, useRef } from "react";
 
 export function useGraph() {
@@ -17,9 +17,9 @@ export function useGraph() {
 export function Graph(SVGElement: SVGSVGElement) {
   const svg = d3
     .select<SVGSVGElement, undefined>(SVGElement) //selecionando o svg
-    .attr("height", "100dvh")
-    .attr("width", "100dvw")
-    .attr("viewBox", [0, 0, "100dvw", "100dvh"]);
+    .attr("height", "100")
+    .attr("width", "100")
+    .attr("viewBox", [0, 0, "100", "100"]);
 
   if (svg.attr("data-graph")) {
     return;
@@ -29,26 +29,26 @@ export function Graph(SVGElement: SVGSVGElement) {
   const g = svg.append("g").attr("cursor", "grab");
 
   const simulation = d3 //criando a simulação
-    .forceSimulation(dataset.nodes) //definindo o dataset da simulação
+    .forceSimulation(database.nodes) //definindo o dataset da simulação
     .force("center", d3.forceCenter(400, 300)) //puxando tudo pro centro do svg
     .force("body", d3.forceManyBody()) //faz com que as bolinhas se afastem
     .force(
       "link",
-      d3.forceLink<Node, Link>(dataset.links).id((node) => node.id) //faz elas se aproximarem
+      d3.forceLink<Node, Link>(database.links).id((node) => node.id) //faz elas se aproximarem
     )
     .alphaTarget(0.4); //nao sabemos nao faz sentido.......,,..,.
 
   const links = g
     .append("g")
     .selectAll<SVGAElement, Link>("line")
-    .data(dataset.links)
+    .data(database.links)
     .join("line")
     .attr("stroke", "white");
 
   const nodes = g
     .append("g") //elemento que agrupa todos os nodes
     .selectAll<SVGElement, Node>("circle") //selectAll deixa sub-intendido que tu vai add algo ali
-    .data(dataset.nodes) //define a dataset que vai ser utilizada
+    .data(database.nodes) //define a dataset que vai ser utilizada
     .join("circle") //cria um elemento pra cada item do data
     .attr("r", 5) //raio do circulo
     .attr("fill", "hotpink"); //cria um elemento pra cada node do dataset
