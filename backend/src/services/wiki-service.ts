@@ -39,6 +39,7 @@ export class WikiService {
       const filteredPages = formatedPages.filter((page) => !!page);
 
       await WikiRepository.updatePage(filteredPages);
+
       allPagesObjects.push(...filteredPages);
     }
 

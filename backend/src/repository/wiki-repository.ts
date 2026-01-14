@@ -4,6 +4,7 @@ import { Connection, Page } from "../services/wiki-service";
 import { db } from "../database";
 import * as stringSimilarity from "string-similarity";
 import { normalize } from "path";
+
 export class WikiRepository {
   public static async getPages() {
     const pages = await db

@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-// import { WikiAPI } from "./api/wiki-api";
+import { WikiAPI } from "./api/wiki-api";
 
 export interface Node extends d3.SimulationNodeDatum {
   //cada bolinha
@@ -25,5 +25,5 @@ export const database: Database = {
 };
 
 export async function Nodes() {
-  // const pages = await WikiAPI.getAllPages();
+  const pages = await WikiAPI.getAllPages();
 }

@@ -11,7 +11,7 @@ export class WikiAPI {
   public static async getAllPages() {
     try {
       const instance = await this.WikiInstance();
-      const pages = await instance.get("/pages?");
+      const pages = await instance.get("/pages");
       console.log(pages.data);
       return pages.data;
     } catch (error) {
