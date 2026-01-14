@@ -9,12 +9,12 @@ async function main() {
 
   app.use(
     cors({
-      origin: "http://localhost:5173",
+      origin: "http://localhost:5173/",
     })
   );
 
   app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173/");
     res.setHeader(
       "Access-Control-Allow-Methods",
       "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE"
