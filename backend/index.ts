@@ -18,10 +18,10 @@ async function main() {
   app.use(express.json());
   app.use(appRoutes);
 
-  app.use((req, res, next) => {
-    const headers = req.headers["x-api-key"];
-    console.log(headers);
-  });
+  // app.use((req, res, next) => {
+  //   const headers = req.headers["x-api-key"];
+  //   console.log(headers);
+  // });
 
   app.listen(port, () => {
     console.log(`a porta ${port} ta abrida !`);

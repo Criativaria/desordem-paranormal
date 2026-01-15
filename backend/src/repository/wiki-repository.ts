@@ -15,7 +15,7 @@ export class WikiRepository {
         categories: page.categories,
       })
       .from(page);
-
+    console.log("teste");
     return pages;
   }
   public static async getConnections() {
