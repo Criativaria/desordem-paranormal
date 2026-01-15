@@ -12,7 +12,7 @@ export class WikiController {
       return res.json(pages);
     }
 
-    pages = await WikiService.getPages();
+    pages = await WikiService.getWikiPages();
 
     return res.json(pages);
   }
