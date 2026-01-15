@@ -12,7 +12,6 @@ export class WikiAPI {
     try {
       const instance = await this.WikiInstance();
       const pages = await instance.get("/pages");
-      console.log(pages.data);
       return pages.data;
     } catch (error) {
       throw new Error(`${error}`);
@@ -33,6 +32,7 @@ export class WikiAPI {
     try {
       const instance = await this.WikiInstance();
       const connections = await instance.get("/connections");
+      console.log(connections.data);
       return connections.data;
     } catch (error) {
       throw new Error(`${error}`);

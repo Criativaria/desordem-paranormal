@@ -1,14 +1,15 @@
 import * as d3 from "d3";
 import { WikiAPI } from "./api/wiki-api";
+import type { connections, page } from "./dtos/wiki-types";
 
 export interface Node extends d3.SimulationNodeDatum {
   //cada bolinha
-  id: string;
-  group: number;
+  id: number;
 }
 export interface Link extends d3.SimulationLinkDatum<Node> {
   //cada conexão
-  value: number;
+  source: number;
+  target: number;
 }
 
 interface Database {
@@ -17,13 +18,21 @@ interface Database {
 }
 
 export const database: Database = {
-  nodes: [
-    { id: "Myriel", group: 1 },
-    { id: "Napoleon", group: 1 },
-  ],
-  links: [{ source: "Napoleon", target: "Myriel", value: 1 }],
+  nodes: [],
+  links: [],
 };
 
 export async function Nodes() {
-  const pages = await WikiAPI.getAllPages();
+  const pages: page[] = await WikiAPI.getAllPages();
+  pages.map((page) => {
+    database.nodes.push({ id: page.id });
+  });
+
+  const connections: connections[] = await WikiAPI.getConnections();
+  connections.map((connection) => {
+    database.links.push({
+      target: connection.targetPage,
+      source: connection.originPage,
+    });
+  });
 }

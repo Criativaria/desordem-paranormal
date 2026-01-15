@@ -1,25 +1,32 @@
 import * as d3 from "d3";
-import { database, type Link, type Node } from "./nodes-treatment";
+import { database, Nodes, type Link, type Node } from "./nodes-treatment";
 import { useEffect, useRef } from "react";
 
 export function useGraph() {
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    if (svgRef.current) {
-      Graph(svgRef.current);
+    async function init() {
+      await Nodes();
+      if (svgRef.current) {
+        Graph(svgRef.current);
+      }
     }
+    init();
   }, []);
 
   return svgRef;
 }
 
 export function Graph(SVGElement: SVGSVGElement) {
+  const width = 800;
+  const height = 600;
+
   const svg = d3
     .select<SVGSVGElement, undefined>(SVGElement) //selecionando o svg
-    .attr("height", "100")
-    .attr("width", "100")
-    .attr("viewBox", [0, 0, "100", "100"]);
+    .attr("height", height)
+    .attr("width", width)
+    .attr("viewBox", [0, 0, width, height]);
 
   if (svg.attr("data-graph")) {
     return;
@@ -60,10 +67,11 @@ export function Graph(SVGElement: SVGSVGElement) {
     //função chamada a cara interação na simulação
     nodes.attr("cx", (node) => node.x!);
     nodes.attr("cy", (node) => node.y!);
-    links.attr("x1", (link) => (link.source as Node).x!);
-    links.attr("y1", (link) => (link.source as Node).y!);
-    links.attr("x2", (link) => (link.target as Node).x!);
-    links.attr("y2", (link) => (link.target as Node).y!);
+
+    links.attr("x1", (link) => (link.source as unknown as Node).x!);
+    links.attr("y1", (link) => (link.source as unknown as Node).y!);
+    links.attr("x2", (link) => (link.target as unknown as Node).x!);
+    links.attr("y2", (link) => (link.target as unknown as Node).y!);
   });
 
   nodes.call(

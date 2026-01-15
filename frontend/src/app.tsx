@@ -1,10 +1,5 @@
-import { WikiAPI } from "./api/wiki-api";
-import { useGraph } from "./graph";
+import { Graph } from "./components/graph";
 
 export function App() {
-  WikiAPI.getAllPages();
-
-  const svgRef = useGraph();
-
-  return <svg ref={svgRef}></svg>;
+  return <Graph />;
 }
