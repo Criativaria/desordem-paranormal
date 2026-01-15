@@ -5,6 +5,7 @@ export class WikiAPI {
     return axios.create({
       baseURL: "https://desordem-paranormal.onrender.com",
       timeout: 180000,
+      headers: { "x-api-key": "teste" },
     });
   }
 

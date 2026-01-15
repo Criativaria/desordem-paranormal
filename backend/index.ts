@@ -11,14 +11,17 @@ async function main() {
     cors({
       origin: "*",
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-      allowedHeaders: ["Content-Type", "Authorization"],
+      allowedHeaders: ["Content-Type", "Authorization", "x-api-key"],
       credentials: true,
     })
   );
-
   app.use(express.json());
-
   app.use(appRoutes);
+
+  app.use((req, res, next) => {
+    const headers = req.headers["x-api-key"];
+    console.log(headers);
+  });
 
   app.listen(port, () => {
     console.log(`a porta ${port} ta abrida !`);
