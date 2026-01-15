@@ -9,6 +9,5 @@ new CronJob(
   null,
   true,
   undefined,
-  undefined,
-  true
+  undefined
 );
