@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Backgrounds & Surfaces */
+  --color-nexus-bg: #030708;
+  --color-nexus-surface: #0a1014;
+  --color-nexus-surface-hover: #111a20;
+  --color-nexus-border: #1a2c33;
+
+  /* Colors - Accents based on image */
+  --color-nexus-primary: #00ffcc; /* Cyan/Teal - Main UI lines */
+  --color-nexus-primary-dim: #008f70;
+  --color-nexus-secondary: #d500f9; /* Purple - Selected Node/Personnel */
+  --color-nexus-grid: #0f1d21; /* Faint grid lines */
+
+  /* Colors - Status Categories */
+  --color-status-infra: #00ff9d; /* Infrastructure - Green */
+  --color-status-security: #ff3333; /* Security - Red */
+  --color-status-finance: #ffaa00; /* Finance - Orange */
+  --color-status-research: #0088ff; /* Research - Blue */
+
+  /* Colors - Categories (Campaigns) */
+  --color-category-1: #ff3333; /* Red - Security compatible */
+  --color-category-2: #ffaa00; /* Orange - Finance compatible */
+  --color-category-3: #ffeb3b; /* Yellow */
+  --color-category-4: #c6ff00; /* Lime */
+  --color-category-5: #00ff9d; /* Green - Infra compatible */
+  --color-category-6: #00e5ff; /* Cyan */
+  --color-category-7: #0088ff; /* Blue - Research compatible */
+  --color-category-8: #651fff; /* Indigo */
+  --color-category-9: #d500f9; /* Purple - Secondary compatible */
+  --color-category-10: #f50057; /* Pink */
+
+  /* Colors - Text */
+  --color-text-main: #e0f2f1;
+  --color-text-muted: #58797d;
+  --color-text-dim: #233538;
+
+  /* Fonts */
+  --font-tech: "Share Tech Mono", "Courier New", monospace;
+  --font-display: "Rajdhani", sans-serif;
+
+  /* Animations */
+  --animate-grid-scan: grid-scan 2s linear infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-nexus-bg text-text-main font-tech antialiased;
+    /* Grid Background Effect */
+    background-image:
+      linear-gradient(var(--color-nexus-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-nexus-grid) 1px, transparent 1px);
+    background-size: 30px 30px;
+    min-height: 100vh;
+  }
+
+  /* Custom Scrollbar for Webkit */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-nexus-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-nexus-surface-hover);
+    border: 1px solid var(--color-nexus-border);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-nexus-primary-dim);
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-nexus-surface/90 border border-nexus-border backdrop-blur-sm shadow-[0_0_15px_-5px_var(--color-nexus-primary-dim)];
+  }
+
+  .glow-text {
+    text-shadow: 0 0 5px currentColor;
+  }
+}
