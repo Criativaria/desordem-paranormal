@@ -32,7 +32,6 @@ export class WikiAPI {
     try {
       const instance = await this.WikiInstance();
       const connections = await instance.get("/connections");
-      console.log(connections.data);
       return connections.data;
     } catch (error) {
       throw new Error(`${error}`);

@@ -1,7 +1,17 @@
 import { useGraph } from "../graph";
 
 export function Graph() {
-  const svgRef = useGraph();
+  const canvasRef = useGraph();
 
-  return <svg ref={svgRef}></svg>;
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        width: "100vw",
+        height: "100vh",
+        display: "block",
+        backgroundColor: "#1a1a1a",
+      }}
+    />
+  );
 }
