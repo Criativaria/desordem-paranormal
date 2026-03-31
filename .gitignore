@@ -167,3 +167,7 @@ dist-ssr
 
 local.db
 .vercel
+
+.cursor/*
+.agent/*
+.antigravity/*
