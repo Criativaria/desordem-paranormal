@@ -35,4 +35,4 @@ jobs:
         run: npx tsx src/utils/workflow.ts
         working-directory: backend
         env:
-+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
