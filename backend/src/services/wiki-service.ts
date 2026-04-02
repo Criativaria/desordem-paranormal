@@ -68,13 +68,14 @@ export class WikiService {
   }
 
   public static async updatePageConnections() {
+    console.log("chamou!");
     const allPages = await this.getPages();
 
     console.log("processing connections", allPages.length);
 
     for (const page of allPages) {
       const getPageConnections = await WikiDataManipulationService.getPageLinks(
-        page.html
+        page.html,
       );
 
       const connections: Connection[] = [];
